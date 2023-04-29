@@ -2,6 +2,11 @@ Name: transform.rpc
 ListenOn: 0.0.0.0:8080
 Mode: dev
 
+Mysql:
+  Test: root:root@tcp(localhost:3306)/test?charset=utf8mb4@parseTime=true&loc=Asia%2fShanghai
+
+CacheConf:
+  - Host: localhost:6379
 
 #Etcd:
 #  Hosts:

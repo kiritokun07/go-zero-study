@@ -1,8 +1,8 @@
 syntax = "v1"
 
 info(
-    title: "short-url"
-    desc: "short-url"
+    title: "shorturl"
+    desc: "shorturl"
     author: "kirito"
     email: "504831261@qq.com"
 )

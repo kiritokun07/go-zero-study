@@ -1,4 +1,4 @@
-## short_url
+## shorturl
 
 before use the script,you should `cd` to the readme.md path like `cd ./service/shorturl`
 
@@ -20,5 +20,5 @@ goctl model mysql ddl -src="./model/ddl/shorturl.sql" -dir="./model" --cache
 
 #### model by datasource
 ```shell
-goctl model mysql datasource -url="root:root@tcp(localhost:3306)/test" -table="short_url" -dir="./model" --cache
+goctl model mysql datasource -url="root:root@tcp(localhost:3306)/test" -table="shorturl" -dir="./model" --cache
 ```
