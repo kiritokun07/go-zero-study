@@ -1,36 +1,40 @@
 syntax = "v1"
 
 info(
-    title: "shorturl"
-    desc: "shorturl"
-    author: "kirito"
-    email: "504831261@qq.com"
+	title: "shorturl"
+	desc: "shorturl"
+	author: "kirito"
+	email: "504831261@qq.com"
 )
 
 type (
-    ShortenReq {
-        Url string `form:"url"`
-    }
-    ShortenResp {
-        Shorten string `json:"shorten"`
-    }
+	ShortenReq {
+		Url string `form:"url"`
+	}
+	ShortenResp {
+		Shorten string `json:"shorten"`
+	}
 )
 
 type (
-    ExpandReq {
-        Shorten string `form:"shorten"`
-    }
-    ExpandResp {
-        Url string `json:"url"`
-    }
+	ExpandReq {
+		Shorten string `form:"shorten"`
+	}
+	ExpandResp {
+		Url string `json:"url"`
+	}
 )
 
+@server(
+	prefix: shorturl
+	group: shorturl
+)
 service shorturl-api {
-    @doc "url to shorten"
-    @handler ShortenHandler
-    get /shorten (ShortenReq) returns (ShortenResp)
-
-    @doc "shorten to url"
-    @handler ExpandHandler
-    get /expand (ExpandReq) returns (ExpandResp)
+	@doc "url to shorten"
+	@handler ShortenHandler
+	get /shorten (ShortenReq) returns (ShortenResp)
+	
+	@doc "shorten to url"
+	@handler ExpandHandler
+	get /expand (ExpandReq) returns (ExpandResp)
 }

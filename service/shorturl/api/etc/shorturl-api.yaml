@@ -1,6 +1,9 @@
 Name: shorturl-api
 Host: 0.0.0.0
 Port: 8888
+Verbose: true
+Mode: dev
 
 TransformerRpcConf:
-  Endpoints: localhost:8080
+  Endpoints:
+    - 'localhost:8080'

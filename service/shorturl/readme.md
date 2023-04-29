@@ -5,7 +5,7 @@ before use the script,you should `cd` to the readme.md path like `cd ./service/s
 #### short-url-api
 
 ```shell
-goctl api go -api './api/shorturl.api' -dir './api''
+goctl api go -api './api/shorturl.api' -dir './api'
 ```
 
 #### short-url-rpc

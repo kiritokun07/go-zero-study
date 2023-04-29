@@ -8,6 +8,7 @@ import (
 	"github.com/kiritokun07/go-zero-study/service/shorturl/rpc/transform/internal/server"
 	"github.com/kiritokun07/go-zero-study/service/shorturl/rpc/transform/internal/svc"
 	"github.com/kiritokun07/go-zero-study/service/shorturl/rpc/transform/transform"
+	"github.com/zeromicro/go-zero/core/logx"
 
 	"github.com/zeromicro/go-zero/core/conf"
 	"github.com/zeromicro/go-zero/core/service"
@@ -24,6 +25,8 @@ func main() {
 	var c config.Config
 	conf.MustLoad(*configFile, &c)
 	ctx := svc.NewServiceContext(c)
+
+	logx.DisableStat()
 
 	s := zrpc.MustNewServer(c.RpcServerConf, func(grpcServer *grpc.Server) {
 		transform.RegisterTransformerServer(grpcServer, server.NewTransformerServer(ctx))

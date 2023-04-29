@@ -4,6 +4,7 @@ package handler
 import (
 	"net/http"
 
+	shorturl "github.com/kiritokun07/go-zero-study/service/shorturl/api/internal/handler/shorturl"
 	"github.com/kiritokun07/go-zero-study/service/shorturl/api/internal/svc"
 
 	"github.com/zeromicro/go-zero/rest"
@@ -15,13 +16,14 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 			{
 				Method:  http.MethodGet,
 				Path:    "/shorten",
-				Handler: ShortenHandler(serverCtx),
+				Handler: shorturl.ShortenHandler(serverCtx),
 			},
 			{
 				Method:  http.MethodGet,
 				Path:    "/expand",
-				Handler: ExpandHandler(serverCtx),
+				Handler: shorturl.ExpandHandler(serverCtx),
 			},
 		},
+		rest.WithPrefix("/shorturl"),
 	)
 }
