@@ -1,0 +1,36 @@
+syntax = "v1"
+
+info(
+	title: "short-url"
+	desc: "short-url"
+	author: "kirito"
+	email: "504831261@qq.com"
+)
+
+type (
+	ShortenReq {
+		Url string `form:"url"`
+	}
+	ShortenResp {
+		Shorten string `json:"shorten"`
+	}
+)
+
+type (
+	ExpandReq {
+		Shorten string `form:"shorten"`
+	}
+	ExpandResp {
+		Url string `json:"url"`
+	}
+)
+
+service shorturl-api {
+	@doc "通过原链设置短链"
+	@handler ShortenHandler
+	get /shorten (ShortenReq) returns (ShortenResp)
+	
+	@doc "通过短链获取原链"
+	@handler ExpandHandler
+	get /expand (ExpandReq) returns (ExpandResp)
+}
