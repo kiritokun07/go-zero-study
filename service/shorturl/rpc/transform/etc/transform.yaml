@@ -3,13 +3,14 @@ ListenOn: 0.0.0.0:8080
 Verbose: true
 Mode: dev
 
+Etcd:
+  Hosts:
+    - 127.0.0.1:2379
+  Key: transform.rpc
+
 Mysql:
   Test: root:root@tcp(localhost:3306)/test?charset=utf8mb4&parseTime=true&loc=Asia%2fShanghai
 
 CacheConf:
   - Host: localhost:6379
 
-#Etcd:
-#  Hosts:
-#  - 127.0.0.1:2379
-#  Key: transform.rpc

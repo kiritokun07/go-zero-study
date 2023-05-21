@@ -5,5 +5,12 @@ Verbose: true
 Mode: dev
 
 TransformerRpcConf:
-  Endpoints:
-    - 'localhost:8080'
+  Etcd:
+    Hosts:
+      - localhost:2379
+    Key: transform.rpc
+
+# direct connect to rpc server by endpoints
+#TransformerRpcConf:
+#  Endpoints:
+#    - 'localhost:8080'
