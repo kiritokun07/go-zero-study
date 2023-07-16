@@ -1,0 +1,25 @@
+syntax = "v1"
+
+info(
+	title: "demo"
+	author: "kirito"
+	email: "504831261@qq.com"
+)
+
+type (
+	LoginReq {
+	}
+
+	LoginResp {
+	}
+)
+
+@server(
+	prefix: demo
+	group: user
+)
+service demo-api {
+	@doc "login"
+	@handler Login
+	post / (LoginReq) returns (LoginResp)
+}
