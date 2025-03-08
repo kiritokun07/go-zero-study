@@ -1,0 +1,10 @@
+Name: xxljob-api
+Host: 0.0.0.0
+Port: 8888
+
+XxlJob:
+  ServerAddr: http://xxljob.cn/xxl-job-admin
+  AccessToken:  'default_token'
+  ExecutorIp: '127.0.0.1'
+  ExecutorPort: '9998'
+  RegistryKey: 'calculate-go-service'
